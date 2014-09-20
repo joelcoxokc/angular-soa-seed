@@ -60,7 +60,6 @@ gulp.task('clean', function(done){
       .pipe( gulp.dest( dist.scripts ) );
   });
 
-
   /*
    *  MINIFY IMAGES
    */
@@ -188,7 +187,12 @@ gulp.task('clean', function(done){
       .pipe( gulp.dest( client.path ) );
   });
 
-
+  /*
+   * Compile Both jade anf html templates
+   */
+  gulp.task('server:templates', function (done){
+    g.runSequence(['templates:jade', 'templates:html'], done)
+  });
 
 
   /*
@@ -252,12 +256,6 @@ gulp.task('clean', function(done){
     gulp.watch(BuiltFiles, notifyLiveReload)
   });
 
-  /*
-   * Compile Both jade anf html templates
-   */
-  gulp.task('server:templates', function (done){
-    g.runSequence(['templates:jade', 'templates:html'], done)
-  });
 
   gulp.task('serve', ['server']);
 
