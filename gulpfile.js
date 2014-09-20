@@ -243,7 +243,6 @@ gulp.task('clean', function(done){
     gulp.watch( [client.scripts.root, client.scripts.modules], ['jshint:scripts']);
     gulp.watch( client.templates.jade, ['templates:jade']);
     gulp.watch( client.templates.html, ['templates:html']);
-    gulp.watch( client.bower, ['inject:bower'] );
 
     var BuiltFiles = [
       config.build.scripts + '*.js',
