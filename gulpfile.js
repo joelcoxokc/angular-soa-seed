@@ -8,18 +8,7 @@ var gulp        = require('gulp'),
     lazypipe    = require('lazypipe'),
     stylish     = require('jshint-stylish'),
     bower       = require('./bower'),
-    isWatching  = false,
-    jade        = require('gulp-jade'),
-    del         = require('del');
-
-
-var htmlminOpts = {
-  removeComments: true,
-  collapseWhitespace: true,
-  removeEmptyAttributes: false,
-  collapseBooleanAttributes: true,
-  removeRedundantAttributes: true
-};
+    jade        = require('gulp-jade')
 
 var errorHandler  = require('./build/errors');
 var config        = require('./build/config');
@@ -199,14 +188,7 @@ gulp.task('clean', function(done){
       .pipe( gulp.dest( client.path ) );
   });
 
-  /*
-   *  Watch Index.html
-   *  ================
-   */
-  gulp.task('index', function(){
-    return gulp.src(config.client.index)
-      .pipe(g.livereload());
-  });
+
 
 
   /*
@@ -262,7 +244,6 @@ gulp.task('clean', function(done){
     gulp.watch( client.templates.jade, ['templates:jade']);
     gulp.watch( client.templates.html, ['templates:html']);
     gulp.watch( client.bower, ['inject:bower'] );
-    gulp.watch( client.index, ['index']);
 
     var BuiltFiles = [
       config.build.scripts + '*.js',
@@ -313,6 +294,6 @@ function injector(options){
     .pipe( g.inject(options.root.src, options.root.params) )
     .pipe( g.inject(options.bundle.src, options.bundle.params) )
     .pipe( g.inject(options.templates.src, options.templates.params) )
-    .pipe( gulp.dest( options.dest ) );
+    .pipe( gulp.dest( client.path ) );
 
 }

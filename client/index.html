@@ -1,8 +1,5 @@
-<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!DOCTYPE html>
+<html>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,21 +11,21 @@
 
     <!-- BOWER STYLES -->
     <!-- build:css -->
-        <!-- bower:css -->
-        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
-        <!-- endbower -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+    <!-- endbower -->
     <!-- endbuild -->
 
 
     <!-- APP STYLES -->
-        <!-- styles:css -->
-        <link rel="stylesheet" href="styles/app.css">
-        <link rel="stylesheet" href="styles/account/login.css">
-        <link rel="stylesheet" href="styles/admin/admin.css">
-        <link rel="stylesheet" href="styles/components/modal.css">
-        <link rel="stylesheet" href="styles/main/main.css">
-        <!-- endinject -->
+    <!-- styles:css -->
+    <link rel="stylesheet" href="styles/app.css">
+    <link rel="stylesheet" href="styles/account/login.css">
+    <link rel="stylesheet" href="styles/admin/admin.css">
+    <link rel="stylesheet" href="styles/components/modal.css">
+    <link rel="stylesheet" href="styles/main/main.css">
+    <!-- endinject -->
     <!-- END APP STYLES -->
 
   </head>
@@ -51,68 +48,59 @@
       ga('send', 'pageview');
     </script>
 
-    <!--[if lt IE 9]>
-    <script src="bower_components/es5-shim/es5-shim.js"></script>
-    <script src="bower_components/json3/lib/json3.min.js"></script>
-    <![endif]-->
+      <!--[if lt IE 9]>
+      <script src="bower_components/es5-shim/es5-shim.js"></script>
+      <script src="bower_components/json3/lib/json3.min.js"></script>
+      <![endif]-->
 
-      <!-- BOWER SCRIPTS -->
-      <!-- build:js scripts/vendor.js -->
-          <!-- bower:js -->
-          <script src="bower_components/jquery/dist/jquery.js"></script>
-          <script src="bower_components/angular/angular.js"></script>
-          <script src="bower_components/json3/lib/json3.js"></script>
-          <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-          <script src="bower_components/angular-resource/angular-resource.js"></script>
-          <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-          <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-          <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-          <script src="bower_components/lodash/dist/lodash.compat.js"></script>
-          <script src="bower_components/angular-socket-io/socket.js"></script>
-          <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-          <script src="bower_components/restangular/dist/restangular.js"></script>
-          <script src="bower_components/ng-Fx/dist/ngFx.js"></script>
-          <!-- endbower -->
+      <!-- build:js -->
+      <!-- bower:js -->
+      <script src="bower_components/jquery/dist/jquery.js"></script>
+      <script src="bower_components/angular/angular.js"></script>
+      <script src="bower_components/json3/lib/json3.js"></script>
+      <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+      <script src="bower_components/angular-resource/angular-resource.js"></script>
+      <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+      <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+      <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+      <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+      <script src="bower_components/angular-socket-io/socket.js"></script>
+      <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+      <script src="bower_components/restangular/dist/restangular.js"></script>
+      <script src="bower_components/ng-Fx/dist/ngFx.js"></script>
+      <!-- endbower -->
       <!-- endbuild -->
 
+      <!-- vendor:js -->
+      <script src="vendor/socket.io.js"></script>
+      <!-- endinject -->
 
-      <!-- VENDOR SCRIPTS -->
-          <!-- vendor:js -->
-          <script src="vendor/socket.io.js"></script>
-          <!-- endinject -->
-      <!-- END VENDOR SCRIPTS -->
+      <!-- root:js -->
+      <script src="app/app.js"></script>
+      <!-- endinject -->
 
-      <!-- APP SCRIPTS -->
-          <!-- root:js -->
-          <script src="app/app.js"></script>
-          <!-- endinject -->
-      <!-- END APP SCRIPTS -->
+      <!-- bundle:js -->
+      <script src="app/account/account.js"></script>
+      <script src="app/admin/admin.controller.js"></script>
+      <script src="app/admin/admin.js"></script>
+      <script src="app/main/main.controller.js"></script>
+      <script src="app/main/main.js"></script>
+      <script src="components/modal/modal.service.js"></script>
+      <script src="components/auth/auth.service.js"></script>
+      <script src="components/auth/user.service.js"></script>
+      <script src="components/mongoose-error/mongoose-error.directive.js"></script>
+      <script src="components/navbar/navbar.controller.js"></script>
+      <script src="components/socket/socket.mock.js"></script>
+      <script src="components/socket/socket.service.js"></script>
+      <script src="app/account/login/login.controller.js"></script>
+      <script src="app/account/settings/settings.controller.js"></script>
+      <script src="app/account/signup/signup.controller.js"></script>
+      <!-- endinject -->
 
-      <!-- APP MODULES -->
-          <!-- bundle:js -->
-          <script src="app/account/account.js"></script>
-          <script src="app/admin/admin.controller.js"></script>
-          <script src="app/admin/admin.js"></script>
-          <script src="app/main/main.controller.js"></script>
-          <script src="app/main/main.js"></script>
-          <script src="components/auth/auth.service.js"></script>
-          <script src="components/auth/user.service.js"></script>
-          <script src="components/modal/modal.service.js"></script>
-          <script src="components/mongoose-error/mongoose-error.directive.js"></script>
-          <script src="components/navbar/navbar.controller.js"></script>
-          <script src="components/socket/socket.mock.js"></script>
-          <script src="components/socket/socket.service.js"></script>
-          <script src="app/account/login/login.controller.js"></script>
-          <script src="app/account/settings/settings.controller.js"></script>
-          <script src="app/account/signup/signup.controller.js"></script>
-          <!-- endinject -->
-      <!-- END APP MODULES -->
+      <!-- templates:js -->
+      <script src="/templates/cached_html_templates.js"></script>
+      <!-- endinject -->
 
-      <!-- APP TEMPLATES -->
-          <!-- templates:js -->
-          <script src="/templates/cached_html_templates.js"></script>
-          <!-- endinject -->
-      <!-- END APP TEMPLATES -->
 
     </body>
 </html>
