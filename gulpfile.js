@@ -53,6 +53,11 @@ gulp.task('default', ['clean', 'remove:inject'], function (cb) {
   g.runSequence('styles', ['copy','build:scripts', 'compile:templates','images', 'inject'],   cb);
 });
 
+
+
+
+
+
 /*
  |  SERVER
  */
