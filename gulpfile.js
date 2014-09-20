@@ -1,27 +1,33 @@
-var gulp        = require('gulp'),
-    g           = require('gulp-load-plugins')({lazy: false}),
-    noop        = g.util.noop,
-    es          = require('event-stream'),
-    bowerFiles  = require('main-bower-files'),
-    rimraf      = require('rimraf'),
-    queue       = require('streamqueue'),
-    lazypipe    = require('lazypipe'),
-    stylish     = require('jshint-stylish'),
-    bower       = require('./bower'),
-    jade        = require('gulp-jade'),
-    tinylr      = require('tiny-lr');
+var gulp        = require('gulp');
+var g           = require('gulp-load-plugins')({lazy: false});
+var noop        = g.util.noop;
+var es          = require('event-stream');
+var bowerFiles  = require('main-bower-files');
+var rimraf      = require('rimraf');
+var queue       = require('streamqueue');
+var lazypipe    = require('lazypipe');
+var stylish     = require('jshint-stylish');
+var bower       = require('./bower');
+var jade        = require('gulp-jade');
+var tinylr      = require('tiny-lr');
+var util        = require('util');
+
+var tinyServer      = tinylr();
+var tinyServer_port = 35729;
+
+// GULP PATHS
+var errorHandler    = require('./build/errors');
+var config          = require('./build/config');
+var client          = config.client;
+var tmp             = config.build;
+
+
+var Gulper              = require('./gulperfile');
 
 
 
-
-var errorHandler  = require('./build/errors');
-var config        = require('./build/config');
-var client = config.client;
-var tmp = config.build;
-var tinyServer = tinylr();
-
-gulp.task('clean', function(done){
-   return gulp.src(tmp.path).pipe(g.clean());
+gulp.task('clean', function ( done ){
+   return gulp.src( tmp.path ).pipe( g.clean() );
 });
 
 
@@ -90,13 +96,13 @@ gulp.task('clean', function(done){
       .pipe( g.jade() )
       .pipe( g.angularTemplatecache( config.jade_file_name, { module: config.module_name }))
       .pipe( gulp.dest( config.build.templatesPath ))
-      .pipe( g.livereload( tinyServer ) );
+      .pipe( g.livereload() );
   });
   gulp.task('templates:html', function(){
     return gulp.src( client.templates.html )
       .pipe( g.angularTemplatecache( config.html_file_name, { module: config.module_name } ) )
       .pipe( gulp.dest( config.build.templatesPath ) )
-      .pipe( g.livereload( tinyServer ) );
+      .pipe( g.livereload() );
   });
 
 /*
@@ -119,7 +125,8 @@ gulp.task('clean', function(done){
     return gulp.src(client.scripts.root, client.scripts.modules)
       .pipe( g.jshint())
         .on('error', errorHandler.onWarning )
-      .pipe( g.jshint.reporter('default') );
+      .pipe( g.jshint.reporter('default') )
+      .pipe( g.livereload( ) );
   });
 
   /*
@@ -149,17 +156,20 @@ gulp.task('clean', function(done){
   /*
    *  INJECT SCRIPTS  (Only used when a new file is added during gulp.watch)
    */
-  gulp.task('inject:scripts',['jshint:scripts'], function(){
-    var target = gulp.src( client.index );
-    var bundle = gulp.src( client.scripts.modules, {read: false} );
-    return target
-      .pipe(g.inject(bundle, {
-          addRootSlash: false,
-          relative: true,
-          name: 'bundle',
-        }))
-      .pipe( gulp.dest( client.path ) )
-  });
+  gulp.task('inject:scripts',[
+    'jshint:scripts'],
+    function(){
+      var target = gulp.src( client.index );
+      var bundle = gulp.src( client.scripts.modules, {read: false} );
+      return target
+        .pipe(g.inject(bundle, {
+            addRootSlash: false,
+            relative: true,
+            name: 'bundle',
+          }))
+        .pipe( gulp.dest( client.path ) )
+    }
+  );
 
   /*
    *  INJECT TEMPLATES  (Only used when a new file is added during gulp.watch)
@@ -182,11 +192,11 @@ gulp.task('clean', function(done){
     var target = gulp.src( client.index );
     var vendor = gulp.src( client.vendor, {read: false} );
     return target
-      .pipe(g.inject(bundle, {
+      .pipe( g.inject( bundle, {
           addRootSlash: false,
           relative: true,
           name: 'vendor',
-        }))
+      } ) )
       .pipe( gulp.dest( client.path ) );
   });
 
@@ -194,27 +204,40 @@ gulp.task('clean', function(done){
    * Compile Both jade anf html templates
    */
   gulp.task('server:templates', function (done){
-    g.runSequence(['templates:jade', 'templates:html'], done)
+    g.runSequence([
+      'templates:jade',
+      'templates:html'
+    ], done)
   });
 
 
   /*
    * Server Build
    */
-  gulp.task('server:build',['clean', 'jshint:scripts', 'server:templates', 'inject:bower'], function( cb ){
-    return buildInjector();
-  });
+  gulp.task('server:build',[
+    'clean',
+    'jshint:scripts',
+    'server:templates',
+    'inject:bower'],
+    function( cb ){
+      return buildInjector();
+    }
+  );
 
   /*
    *  Run Server
    *  ==========
    */
   gulp.task('server:run', function () {
-    return g.nodemon({ script: './servers/server/app.js'})
-      // .on('change', ['lint'])
-      .on('restart', function () {
-        console.log('restarted!')
-      });
+    require('./servers/server/app.js');
+    // return g.nodemon({
+    //     script: './servers/server/app.js',
+    //     ext: 'html js',
+    //   })
+    //   .on('change', [''])
+    //   .on('restart', function () {
+    //     console.log('restarted!')
+    //   });
   });
 
   /*
@@ -222,17 +245,14 @@ gulp.task('clean', function(done){
    *  ============
    */
   gulp.task('watch', function(){
+    // tinyServer.listen(tinyServer_port  , function (err) {
+    //     if (err) return console.log(err);
 
-    gulp.watch( [client.scripts.root, client.scripts.modules], ['jshint:scripts']);
-    gulp.watch( client.templates.jade, ['templates:jade']);
-    gulp.watch( client.templates.html, ['templates:html']);
+        // This is a custome built gulp plugin;
+    gulp.start('gulp:watcher');
 
-    var BuiltFiles = [
-      config.build.scripts + '*.js',
-      config.build.templates + '*.js',
-      config.build.styles + '*.css',
-    ]
-    gulp.watch(BuiltFiles, notifyLiveReload)
+    // });
+
   });
 
 
@@ -255,12 +275,35 @@ gulp.task('server', ['server:build', 'watch'], function ( callback ){
  */
 gulp.task('default', ['server']);
 
+gulp.task('gulper', function(){
+  var gulper = require('./gulperfile.js')();
+  gulper.runWatch()
+});
 
+// function runGulpWatch(){
+
+gulp.task('gulp:watcher', function(){
+
+  // gulp.watch( [client.scripts.root, client.scripts.modules], ['jshint:scripts']);
+  gulp.watch( client.templates.jade, ['templates:jade']);
+  gulp.watch( client.templates.html, ['templates:html']);
+  gulp.watch( './gulperfile.js', ['gulper'] )
+
+  var BuiltFiles = [
+    client.scripts.root,
+    client.scripts.modules,
+    tmp.styles + '*.css',
+    tmp.scripts + '*.js',
+    tmp.templates + '*.js',
+  ]
+  gulp.watch(BuiltFiles, notifyLiveReload)
+});
+// }
 
 function notifyLiveReload(event){
   console.log('File ' + event.path + ' was ' + event.type + ', reloading...');
   gulp.src(event.path, { read:false })
-    .pipe(g.livereload());
+    .pipe( g.livereload( ) );
 }
 
 function injector(options){

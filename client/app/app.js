@@ -16,6 +16,7 @@ angular.module('baseApp', [
     $httpProvider.interceptors.push('authInterceptor');
   })
 
+
   .factory('authInterceptor', function ($rootScope, $q, $cookieStore, $location) {
     return {
       // Add authorization token to headers

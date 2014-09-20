@@ -18,6 +18,7 @@ var passport = require('passport');
 var session = require('express-session');
 var mongoStore = require('connect-mongo')(session);
 var mongoose = require('mongoose');
+var tinylr = require('tiny-lr');
 
 module.exports = function(app) {
   var env = app.get('env');
@@ -49,7 +50,9 @@ module.exports = function(app) {
   }
 
   if ('development' === env || 'test' === env) {
-    // app.use(require('connect-livereload')());
+    app.use(require('connect-livereload')());
+    // app.use(tinylr.middleware({ app: app }))
+    // app.use(express.static(path.resolve('./')))
     app.use(express.static(path.join(config.root, '.tmp')));
     app.use(express.static(path.join(config.root, 'client')));
     app.set('appPath', 'client');
