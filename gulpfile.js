@@ -181,6 +181,7 @@ gulp.task('copy', function () {
 });
 
 
+
 /*
  | COMPILE Both jade and html templates into the .tmp/templates
  */
@@ -342,6 +343,7 @@ gulp.task('inject:scripts',[
   }
 );
 
+
 /*
  |  INJECT TEMPLATES  (Only used when a new file is added during gulp.watch)
  */
@@ -355,6 +357,7 @@ gulp.task('inject:templates', function(){
       ignorePath: '.tmp'
     })).pipe(gulp.dest( client.path ));
 });
+
 
 /*
  |  INJECT VENDORS  (Only used when a new file is added during gulp.watch)
