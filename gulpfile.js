@@ -8,14 +8,14 @@ var gulp        = require('gulp'),
     lazypipe    = require('lazypipe'),
     stylish     = require('jshint-stylish'),
     bower       = require('./bower'),
-    jade        = require('gulp-jade')
+    jade        = require('gulp-jade'),
+    tinylr      = require('tiny-lr');
 
 var errorHandler  = require('./build/errors');
 var config        = require('./build/config');
-
-
 var client = config.client;
 var tmp = config.build;
+var tinyServer = tinylr();
 
 gulp.task('clean', function(done){
    return gulp.src(tmp.path).pipe(g.clean());
@@ -87,13 +87,13 @@ gulp.task('clean', function(done){
       .pipe( g.jade() )
       .pipe( g.angularTemplatecache( config.jade_file_name, { module: config.module_name }))
       .pipe( gulp.dest( config.build.templatesPath ))
-      .pipe( g.livereload() );
+      .pipe( g.livereload( tinyServer ) );
   });
   gulp.task('templates:html', function(){
     return gulp.src( client.templates.html )
       .pipe( g.angularTemplatecache( config.html_file_name, { module: config.module_name } ) )
       .pipe( gulp.dest( config.build.templatesPath ) )
-      .pipe( g.livereload() );
+      .pipe( g.livereload( tinyServer ) );
   });
 
 /*
@@ -199,31 +199,7 @@ gulp.task('clean', function(done){
    * Server Build
    */
   gulp.task('server:build',['clean', 'jshint:scripts', 'server:templates', 'inject:bower'], function( cb ){
-    var options = {
-      target: gulp.src( client.index ),
-      dest: client.path,
-      styles: {
-        src: gulp.src( client.styles.css, {read:false}),
-        params: {addRootSlash:false, relative:true, name:'styles'}
-      },
-      vendor: {
-        src: gulp.src( client.vendor, {read:false}),
-        params: {addRootSlash:false, relative:true, name:'vendor'}
-      },
-      root: {
-        src: gulp.src( client.scripts.root, {read:false}),
-        params: {addRootSlash:false, relative:true, name:'root'}
-      },
-      bundle:{
-        src: gulp.src( client.scripts.modules, {read:false}),
-        params: {addRootSlash:false, relative:true, name:'bundle'}
-      },
-      templates: {
-        src: gulp.src( tmp.templates, {read:false}),
-        params: {addRootSlash:true, ignorePath:'.tmp', name:'templates'}
-      }
-    }
-    return injector(options);
+    return buildInjector();
   });
 
   /*
@@ -293,4 +269,32 @@ function injector(options){
     .pipe( g.inject(options.templates.src, options.templates.params) )
     .pipe( gulp.dest( client.path ) );
 
+}
+
+function buildInjector(){
+  var options = {
+      target: gulp.src( client.index ),
+      dest: client.path,
+      styles: {
+        src: gulp.src( client.styles.css, {read:false}),
+        params: {addRootSlash:false, relative:true, name:'styles'}
+      },
+      vendor: {
+        src: gulp.src( client.vendor, {read:false}),
+        params: {addRootSlash:false, relative:true, name:'vendor'}
+      },
+      root: {
+        src: gulp.src( client.scripts.root, {read:false}),
+        params: {addRootSlash:false, relative:true, name:'root'}
+      },
+      bundle:{
+        src: gulp.src( client.scripts.modules, {read:false}),
+        params: {addRootSlash:false, relative:true, name:'bundle'}
+      },
+      templates: {
+        src: gulp.src( tmp.templates, {read:false}),
+        params: {addRootSlash:true, ignorePath:'.tmp', name:'templates'}
+      }
+    }
+    return injector(options);
 }
