@@ -9,6 +9,7 @@ angular.module('baseApp', [
   'ui.router',
   'ui.bootstrap'
 ])
+  .constant('serverUrl', 'http://localhost:9000/api/')
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider
       .otherwise('/');

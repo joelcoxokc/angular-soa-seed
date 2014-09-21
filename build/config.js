@@ -2,9 +2,11 @@ var config = {
   app_file_name: 'app.js',
   modules_file_name: 'bundle.js',
   vendor_file_name: 'vendor.js',
+  bower_file_name: 'bower_components.min.js',
   css_file_name: 'app.css',
   jade_file_name: 'cached_jade_templates.js',
   html_file_name: 'cached_html_templates.js',
+  templates_file_name: 'cached_templates.js',
   module_name: 'baseApp',
   client: {
     path: './client/',
@@ -13,7 +15,7 @@ var config = {
       modules: ['./client/{app,components}/**/*.js', '!./client/app/app.js', '!./client/{app,components}/**/*.spec.js'],
     },
     styles: {
-      css:'./client/styles/**/*.css',
+      css:['./client/styles/**/*.css'],
     },
     index: './client/index.html',
     templates:{
@@ -21,8 +23,8 @@ var config = {
      html: ['./client/{app,components}/**/*.html']
     },
     bower: './client/bower_components/',
-    vendor: './client/vendor/**/*.js',
-    images: './client/assets/images/**/*'
+    vendor: ['./client/vendor/**/*.js'],
+    images: ['./client/assets/images/**/*']
   },
   build: {
     path: './.tmp/',
@@ -37,10 +39,16 @@ var config = {
     fonts: './.tmp/fonts'
   },
   dist: {
-    images: './dist/images/',
-    scripts: './dist/scritps/',
-    styles: './dist/styles/',
-    index: './dist/'
+    path: './dist/',
+    images: './dist/assets/images/',
+    scriptPath: './dist/scripts/',
+    scripts: './dist/scritps/*.js',
+    stylePath: './dist/styles/',
+    styles: './dist/styles/*.css',
+    bower: './dist/bower_components/',
+    templatePath: './dist/templates/',
+    templates: './dist/templates/*.js',
+    index: './dist/index.html'
   },
   server: {
     path: './servers/',
