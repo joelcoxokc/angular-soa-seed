@@ -262,22 +262,29 @@ gulp.task('karma:inject:bower', function(){
 
   var bower = mainBowerFiles({
     paths: {
-      bowerDirectory: client.bower,
       bowerrc: './.bowerrc',
-      bowerJson: './bower.json'
+      bowerJson: './bower.json',
+      includeDev: true
     }
   })
   return gulp.src('./karma.conf.js')
-
   .pipe( g.inject( gulp.src(bower), {
-    starttag: 'files: [',
+    starttag: 'bower= [',
     endtag: ']',
-    ingnorPath: './client',
     addRootSlash: false,
     transform: function (filepath, file, i, length) {
       return '  "' + filepath + '"' + (i + 1 < length ? ',' : '');
     }
   }))
+  .pipe( g.inject( gulp.src(client.specs), {
+      starttag: 'client= [',
+      endtag: ']',
+      addRootSlash: false,
+      transform: function (filepath, file, i, length) {
+        return '  "' + filepath + '"' + (i + 1 < length ? ',' : '');
+      }
+    }
+  ))
   .pipe( gulp.dest('./') );
 });
 

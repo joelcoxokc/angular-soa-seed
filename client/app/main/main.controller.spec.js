@@ -8,12 +8,14 @@ describe('Controller: MainCtrl', function () {
 
   var MainCtrl,
       scope,
+      serverUrl,
       $httpBackend;
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function (_$httpBackend_, $controller, $rootScope) {
+  beforeEach(inject(function (_$httpBackend_, $controller, $rootScope, serverUrl) {
+    serverUrl = serverUrl;
     $httpBackend = _$httpBackend_;
-    $httpBackend.expectGET('/api/things')
+    $httpBackend.expectGET(serverUrl+'things')
       .respond(['HTML5 Boilerplate', 'AngularJS', 'Karma', 'Express']);
 
     scope = $rootScope.$new();

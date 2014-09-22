@@ -10,6 +10,7 @@ var config = {
   module_name: 'baseApp',
   client: {
     path: './client/',
+    specs: ['./client/app/app.js', './client/{app,components}/**/*.js', './client/{app,components}/**/*.spec.js', './client/{app,components}/**/*.html'],
     scripts: {
       root: './client/app/app.js',
       modules: ['./client/{app,components}/**/*.js', '!./client/app/app.js', '!./client/{app,components}/**/*.spec.js'],
