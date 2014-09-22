@@ -38,7 +38,7 @@
     "gulp": "*",
     "gulp-angular-filesort": "^1.0.3",
     "gulp-angular-templatecache": "*",
-    "gulp-autoprefixer": "^1.0.0",
+    "gulp-autoprefixer": "^1.0.1",
     "gulp-bower": "0.0.6",
     "gulp-cache": "^0.2.2",
     "gulp-cached": "^1.0.1",
