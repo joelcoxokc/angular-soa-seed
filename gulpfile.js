@@ -12,6 +12,7 @@ var util        = require('util');
 var browserSync = require('browser-sync');
 var del         = require('del');
 
+var mainBowerFiles = require('main-bower-files');
 var reload      = browserSync.reload;
 // GULP PATHS
 var errorHandler= require('./build/errors');
@@ -254,6 +255,30 @@ gulp.task('dist:bower:files', function(){
 
   return g.bower( client.bower )
     .pipe( gulp.dest( dist.bower ) )
+});
+
+
+gulp.task('karma:inject:bower', function(){
+
+  var bower = mainBowerFiles({
+    paths: {
+      bowerDirectory: client.bower,
+      bowerrc: './.bowerrc',
+      bowerJson: './bower.json'
+    }
+  })
+  return gulp.src('./karma.conf.js')
+
+  .pipe( g.inject( gulp.src(bower), {
+    starttag: 'files: [',
+    endtag: ']',
+    ingnorPath: './client',
+    addRootSlash: false,
+    transform: function (filepath, file, i, length) {
+      return '  "' + filepath + '"' + (i + 1 < length ? ',' : '');
+    }
+  }))
+  .pipe( gulp.dest('./') );
 });
 
 /*
