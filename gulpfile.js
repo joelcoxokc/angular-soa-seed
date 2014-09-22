@@ -11,6 +11,7 @@ var bower       = require('./bower');
 var util        = require('util');
 var browserSync = require('browser-sync');
 var del         = require('del');
+var karma       = require('karma').server;
 
 var mainBowerFiles = require('main-bower-files');
 var reload      = browserSync.reload;
@@ -76,6 +77,12 @@ gulp.task('serve:dist', ['default'], function () {
     server: 'dist'
   });
   runServers.base();
+});
+
+gulp.task('test', ['karma:inject:bower', 'serve'], function ( done ){
+  karma.start({
+    configFile: __dirname + '/karma.conf.js'
+  }, done);
 });
 
 /*
