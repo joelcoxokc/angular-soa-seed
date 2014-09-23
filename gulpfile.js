@@ -59,13 +59,13 @@ gulp.task('default', ['clean', 'remove:inject'], function (cb) {
  |  SERVER
  */
 gulp.task('server', ['serve']);
-gulp.task('serve',['styles', 'inject:client'], function () {
+gulp.task('serve',['styles', 'inject:client', 'run:servers'], function () {
   browserSync({
     notify: false,
     // https: true,
     server: ['.tmp', 'client']
   });
-  runServers.base();
+
   gulp.watch(client.templates.html, reload);
   gulp.watch(client.styles.css, ['styles', reload]);
   gulp.watch([client.scripts.root].concat(client.scripts.modules), ['jshint']);
@@ -78,7 +78,6 @@ gulp.task('serve:dist', ['default', 'run:servers'], function () {
     // https: true,
     server: 'dist'
   });
-  runServers.base();
 });
 gulp.task('run:servers', function(){
   runServers.base();
