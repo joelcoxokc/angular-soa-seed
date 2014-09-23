@@ -1,0 +1,456 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install' ]
+2 info using npm@1.4.23
+3 info using node@v0.10.31
+4 verbose readDependencies using package.json deps
+5 verbose install where, deps [ '/Users/joelcox/Desktop/angular-soa-seed',
+5 verbose install   [ 'express',
+5 verbose install     'morgan',
+5 verbose install     'body-parser',
+5 verbose install     'method-override',
+5 verbose install     'serve-favicon',
+5 verbose install     'cookie-parser',
+5 verbose install     'cors',
+5 verbose install     'express-session',
+5 verbose install     'errorhandler',
+5 verbose install     'compression',
+5 verbose install     'lodash',
+5 verbose install     'ejs',
+5 verbose install     'mongoose',
+5 verbose install     'jsonwebtoken',
+5 verbose install     'express-jwt',
+5 verbose install     'passport',
+5 verbose install     'passport-local',
+5 verbose install     'composable-middleware',
+5 verbose install     'connect-mongo',
+5 verbose install     'socket.io',
+5 verbose install     'socket.io-client',
+5 verbose install     'socketio-jwt',
+5 verbose install     'apache-server-configs',
+5 verbose install     'browser-sync',
+5 verbose install     'connect-livereload',
+5 verbose install     'del',
+5 verbose install     'event-stream',
+5 verbose install     'gulp',
+5 verbose install     'gulp-angular-filesort',
+5 verbose install     'gulp-angular-templatecache',
+5 verbose install     'gulp-autoprefixer',
+5 verbose install     'gulp-bower',
+5 verbose install     'gulp-bower-files',
+5 verbose install     'gulp-cache',
+5 verbose install     'gulp-cached',
+5 verbose install     'gulp-changed',
+5 verbose install     'gulp-clean',
+5 verbose install     'gulp-coffee',
+5 verbose install     'gulp-coffeelint',
+5 verbose install     'gulp-concat',
+5 verbose install     'gulp-csslint',
+5 verbose install     'gulp-csso',
+5 verbose install     'gulp-embedlr',
+5 verbose install     'gulp-express',
+5 verbose install     'gulp-filesize',
+5 verbose install     'gulp-flatten',
+5 verbose install     'gulp-git',
+5 verbose install     'gulp-header',
+5 verbose install     'gulp-htmlmin',
+5 verbose install     'gulp-if',
+5 verbose install     'gulp-imagemin',
+5 verbose install     'gulp-inject',
+5 verbose install     'gulp-jade',
+5 verbose install     'gulp-jshint',
+5 verbose install     'gulp-karma',
+5 verbose install     'gulp-less',
+5 verbose install     'gulp-less-sourcemap',
+5 verbose install     'gulp-livereload',
+5 verbose install     'gulp-load-plugins',
+5 verbose install     'gulp-minify-css',
+5 verbose install     'gulp-ng-annotate',
+5 verbose install     'gulp-ng-html2js',
+5 verbose install     'gulp-ngmin',
+5 verbose install     'gulp-nodemon',
+5 verbose install     'gulp-recess',
+5 verbose install     'gulp-remember',
+5 verbose install     'gulp-rename',
+5 verbose install     'gulp-rimraf',
+5 verbose install     'gulp-ruby-sass',
+5 verbose install     'gulp-run-sequence',
+5 verbose install     'gulp-sass',
+5 verbose install     'gulp-serve',
+5 verbose install     'gulp-shell',
+5 verbose install     'gulp-size',
+5 verbose install     'gulp-sourcemaps',
+5 verbose install     'gulp-uglify',
+5 verbose install     'gulp-uncss',
+5 verbose install     'gulp-useref',
+5 verbose install     'gulp-util',
+5 verbose install     'gulp-watch',
+5 verbose install     'http',
+5 verbose install     'jasmine-given',
+5 verbose install     'jit-grunt',
+5 verbose install     'jshint-stylish',
+5 verbose install     'karma',
+5 verbose install     'karma-chai',
+5 verbose install     'karma-chrome-launcher',
+5 verbose install     'karma-coffee-preprocessor',
+5 verbose install     'karma-firefox-launcher',
+5 verbose install     'karma-html2js-preprocessor',
+5 verbose install     'karma-jade-preprocessor',
+5 verbose install     'karma-jasmine',
+5 verbose install     'karma-mocha',
+5 verbose install     'karma-ng-html2js-preprocessor',
+5 verbose install     'karma-ng-jade2js-preprocessor',
+5 verbose install     'karma-ng-scenario',
+5 verbose install     'karma-phantomjs-launcher',
+5 verbose install     'karma-requirejs',
+5 verbose install     'karma-script-launcher',
+5 verbose install     'lazypipe',
+5 verbose install     'main-bower-files',
+5 verbose install     'nodemon',
+5 verbose install     'open',
+5 verbose install     'protractor',
+5 verbose install     'requirejs',
+5 verbose install     'rimraf',
+5 verbose install     'should',
+5 verbose install     'streamqueue',
+5 verbose install     'supertest',
+5 verbose install     'testem',
+5 verbose install     'time-grunt',
+5 verbose install     'tiny-lr',
+5 verbose install     'util',
+5 verbose install     'wiredep',
+5 verbose install     'yargs' ] ]
+6 info preinstall base@0.0.0
+7 warn package.json http@0.0.0 http is also the name of a node core module.
+8 warn package.json http@0.0.0 No description
+9 warn package.json http@0.0.0 No repository field.
+10 warn package.json util@0.10.3 util is also the name of a node core module.
+11 verbose readDependencies using package.json deps
+12 verbose already installed skipping express@~4.0.0 /Users/joelcox/Desktop/angular-soa-seed
+13 verbose already installed skipping morgan@~1.0.0 /Users/joelcox/Desktop/angular-soa-seed
+14 verbose already installed skipping body-parser@~1.5.0 /Users/joelcox/Desktop/angular-soa-seed
+15 verbose already installed skipping method-override@~1.0.0 /Users/joelcox/Desktop/angular-soa-seed
+16 verbose already installed skipping serve-favicon@~2.0.1 /Users/joelcox/Desktop/angular-soa-seed
+17 verbose already installed skipping cookie-parser@~1.0.1 /Users/joelcox/Desktop/angular-soa-seed
+18 verbose already installed skipping cors@^2.4.1 /Users/joelcox/Desktop/angular-soa-seed
+19 verbose already installed skipping express-session@~1.0.2 /Users/joelcox/Desktop/angular-soa-seed
+20 verbose already installed skipping errorhandler@~1.0.0 /Users/joelcox/Desktop/angular-soa-seed
+21 verbose already installed skipping compression@~1.0.1 /Users/joelcox/Desktop/angular-soa-seed
+22 verbose already installed skipping lodash@~2.4.1 /Users/joelcox/Desktop/angular-soa-seed
+23 verbose already installed skipping ejs@~0.8.4 /Users/joelcox/Desktop/angular-soa-seed
+24 verbose already installed skipping mongoose@~3.8.8 /Users/joelcox/Desktop/angular-soa-seed
+25 verbose already installed skipping jsonwebtoken@^0.3.0 /Users/joelcox/Desktop/angular-soa-seed
+26 verbose already installed skipping express-jwt@^0.1.3 /Users/joelcox/Desktop/angular-soa-seed
+27 verbose already installed skipping passport@~0.2.0 /Users/joelcox/Desktop/angular-soa-seed
+28 verbose already installed skipping passport-local@~0.1.6 /Users/joelcox/Desktop/angular-soa-seed
+29 verbose already installed skipping composable-middleware@^0.3.0 /Users/joelcox/Desktop/angular-soa-seed
+30 verbose already installed skipping connect-mongo@^0.4.1 /Users/joelcox/Desktop/angular-soa-seed
+31 verbose already installed skipping socket.io@^1.0.6 /Users/joelcox/Desktop/angular-soa-seed
+32 verbose already installed skipping socket.io-client@^1.0.6 /Users/joelcox/Desktop/angular-soa-seed
+33 verbose already installed skipping socketio-jwt@^2.0.2 /Users/joelcox/Desktop/angular-soa-seed
+34 verbose already installed skipping apache-server-configs@^2.8.0 /Users/joelcox/Desktop/angular-soa-seed
+35 verbose already installed skipping browser-sync@^1.3.7 /Users/joelcox/Desktop/angular-soa-seed
+36 verbose already installed skipping connect-livereload@~0.4.0 /Users/joelcox/Desktop/angular-soa-seed
+37 verbose already installed skipping del@^0.1.3 /Users/joelcox/Desktop/angular-soa-seed
+38 verbose already installed skipping event-stream@^3.1.7 /Users/joelcox/Desktop/angular-soa-seed
+39 verbose already installed skipping gulp@* /Users/joelcox/Desktop/angular-soa-seed
+40 verbose already installed skipping gulp-angular-filesort@^1.0.3 /Users/joelcox/Desktop/angular-soa-seed
+41 verbose already installed skipping gulp-angular-templatecache@* /Users/joelcox/Desktop/angular-soa-seed
+42 verbose already installed skipping gulp-autoprefixer@^1.0.1 /Users/joelcox/Desktop/angular-soa-seed
+43 verbose already installed skipping gulp-bower@0.0.6 /Users/joelcox/Desktop/angular-soa-seed
+44 verbose already installed skipping gulp-bower-files@^0.2.7 /Users/joelcox/Desktop/angular-soa-seed
+45 verbose already installed skipping gulp-cache@^0.2.2 /Users/joelcox/Desktop/angular-soa-seed
+46 verbose already installed skipping gulp-cached@^1.0.1 /Users/joelcox/Desktop/angular-soa-seed
+47 verbose already installed skipping gulp-changed@^1.0.0 /Users/joelcox/Desktop/angular-soa-seed
+48 verbose already installed skipping gulp-clean@^0.3.1 /Users/joelcox/Desktop/angular-soa-seed
+49 verbose already installed skipping gulp-coffee@^2.2.0 /Users/joelcox/Desktop/angular-soa-seed
+50 verbose already installed skipping gulp-coffeelint@* /Users/joelcox/Desktop/angular-soa-seed
+51 verbose already installed skipping gulp-concat@^2.4.1 /Users/joelcox/Desktop/angular-soa-seed
+52 verbose already installed skipping gulp-csslint@~0.1.4 /Users/joelcox/Desktop/angular-soa-seed
+53 verbose already installed skipping gulp-csso@^0.2.9 /Users/joelcox/Desktop/angular-soa-seed
+54 verbose already installed skipping gulp-embedlr@~0.5.2 /Users/joelcox/Desktop/angular-soa-seed
+55 verbose already installed skipping gulp-express@^0.1.0 /Users/joelcox/Desktop/angular-soa-seed
+56 verbose already installed skipping gulp-filesize@* /Users/joelcox/Desktop/angular-soa-seed
+57 verbose already installed skipping gulp-flatten@* /Users/joelcox/Desktop/angular-soa-seed
+58 verbose already installed skipping gulp-git@^0.5.0 /Users/joelcox/Desktop/angular-soa-seed
+59 verbose already installed skipping gulp-header@^1.0.2 /Users/joelcox/Desktop/angular-soa-seed
+60 verbose already installed skipping gulp-htmlmin@^0.2.0 /Users/joelcox/Desktop/angular-soa-seed
+61 verbose already installed skipping gulp-if@^1.2.4 /Users/joelcox/Desktop/angular-soa-seed
+62 verbose already installed skipping gulp-imagemin@* /Users/joelcox/Desktop/angular-soa-seed
+63 verbose already installed skipping gulp-inject@^1.0.1 /Users/joelcox/Desktop/angular-soa-seed
+64 verbose already installed skipping gulp-jade@^0.8.0 /Users/joelcox/Desktop/angular-soa-seed
+65 verbose already installed skipping gulp-jshint@^1.8.4 /Users/joelcox/Desktop/angular-soa-seed
+66 verbose already installed skipping gulp-karma@0.0.4 /Users/joelcox/Desktop/angular-soa-seed
+67 verbose already installed skipping gulp-less@* /Users/joelcox/Desktop/angular-soa-seed
+68 verbose already installed skipping gulp-less-sourcemap@* /Users/joelcox/Desktop/angular-soa-seed
+69 verbose already installed skipping gulp-livereload@^2.1.1 /Users/joelcox/Desktop/angular-soa-seed
+70 verbose already installed skipping gulp-load-plugins@^0.6.0 /Users/joelcox/Desktop/angular-soa-seed
+71 verbose already installed skipping gulp-minify-css@~0.3.4 /Users/joelcox/Desktop/angular-soa-seed
+72 verbose already installed skipping gulp-ng-annotate@~0.2.0 /Users/joelcox/Desktop/angular-soa-seed
+73 verbose already installed skipping gulp-ng-html2js@~0.1.7 /Users/joelcox/Desktop/angular-soa-seed
+74 verbose already installed skipping gulp-ngmin@^0.3.0 /Users/joelcox/Desktop/angular-soa-seed
+75 verbose already installed skipping gulp-nodemon@^1.0.4 /Users/joelcox/Desktop/angular-soa-seed
+76 verbose already installed skipping gulp-recess@* /Users/joelcox/Desktop/angular-soa-seed
+77 verbose already installed skipping gulp-remember@* /Users/joelcox/Desktop/angular-soa-seed
+78 verbose already installed skipping gulp-rename@^1.2.0 /Users/joelcox/Desktop/angular-soa-seed
+79 verbose already installed skipping gulp-rimraf@^0.1.0 /Users/joelcox/Desktop/angular-soa-seed
+80 verbose already installed skipping gulp-ruby-sass@^0.7.1 /Users/joelcox/Desktop/angular-soa-seed
+81 verbose already installed skipping gulp-run-sequence@^0.3.2 /Users/joelcox/Desktop/angular-soa-seed
+82 verbose already installed skipping gulp-sass@^0.7.3 /Users/joelcox/Desktop/angular-soa-seed
+83 verbose already installed skipping gulp-serve@~0.2.0 /Users/joelcox/Desktop/angular-soa-seed
+84 verbose already installed skipping gulp-shell@^0.2.9 /Users/joelcox/Desktop/angular-soa-seed
+85 verbose already installed skipping gulp-size@^1.1.0 /Users/joelcox/Desktop/angular-soa-seed
+86 verbose already installed skipping gulp-sourcemaps@* /Users/joelcox/Desktop/angular-soa-seed
+87 verbose already installed skipping gulp-uglify@^1.0.1 /Users/joelcox/Desktop/angular-soa-seed
+88 verbose already installed skipping gulp-uncss@^0.4.5 /Users/joelcox/Desktop/angular-soa-seed
+89 verbose already installed skipping gulp-useref@^1.0.1 /Users/joelcox/Desktop/angular-soa-seed
+90 verbose already installed skipping gulp-util@^3.0.1 /Users/joelcox/Desktop/angular-soa-seed
+91 verbose already installed skipping gulp-watch@^1.0.5 /Users/joelcox/Desktop/angular-soa-seed
+92 verbose already installed skipping http@0.0.0 /Users/joelcox/Desktop/angular-soa-seed
+93 verbose already installed skipping jasmine-given@* /Users/joelcox/Desktop/angular-soa-seed
+94 verbose already installed skipping jit-grunt@^0.5.0 /Users/joelcox/Desktop/angular-soa-seed
+95 verbose already installed skipping jshint-stylish@~0.1.5 /Users/joelcox/Desktop/angular-soa-seed
+96 verbose already installed skipping karma@~0.12.9 /Users/joelcox/Desktop/angular-soa-seed
+97 verbose already installed skipping karma-chai@~0.1.0 /Users/joelcox/Desktop/angular-soa-seed
+98 verbose already installed skipping karma-chrome-launcher@~0.1.3 /Users/joelcox/Desktop/angular-soa-seed
+99 verbose already installed skipping karma-coffee-preprocessor@~0.2.1 /Users/joelcox/Desktop/angular-soa-seed
+100 verbose already installed skipping karma-firefox-launcher@~0.1.3 /Users/joelcox/Desktop/angular-soa-seed
+101 verbose already installed skipping karma-html2js-preprocessor@~0.1.0 /Users/joelcox/Desktop/angular-soa-seed
+102 verbose already installed skipping karma-jade-preprocessor@0.0.11 /Users/joelcox/Desktop/angular-soa-seed
+103 verbose already installed skipping karma-jasmine@~0.1.5 /Users/joelcox/Desktop/angular-soa-seed
+104 verbose already installed skipping karma-mocha@~0.1.3 /Users/joelcox/Desktop/angular-soa-seed
+105 verbose already installed skipping karma-ng-html2js-preprocessor@~0.1.0 /Users/joelcox/Desktop/angular-soa-seed
+106 verbose already installed skipping karma-ng-jade2js-preprocessor@^0.1.2 /Users/joelcox/Desktop/angular-soa-seed
+107 verbose already installed skipping karma-ng-scenario@~0.1.0 /Users/joelcox/Desktop/angular-soa-seed
+108 verbose already installed skipping karma-phantomjs-launcher@~0.1.4 /Users/joelcox/Desktop/angular-soa-seed
+109 verbose already installed skipping karma-requirejs@~0.2.1 /Users/joelcox/Desktop/angular-soa-seed
+110 verbose already installed skipping karma-script-launcher@~0.1.0 /Users/joelcox/Desktop/angular-soa-seed
+111 verbose already installed skipping lazypipe@~0.2.1 /Users/joelcox/Desktop/angular-soa-seed
+112 verbose already installed skipping main-bower-files@^2.0.0 /Users/joelcox/Desktop/angular-soa-seed
+113 verbose already installed skipping nodemon@^1.2.1 /Users/joelcox/Desktop/angular-soa-seed
+114 verbose already installed skipping open@~0.0.4 /Users/joelcox/Desktop/angular-soa-seed
+115 verbose already installed skipping protractor@~1.0.0 /Users/joelcox/Desktop/angular-soa-seed
+116 verbose already installed skipping requirejs@~2.1.11 /Users/joelcox/Desktop/angular-soa-seed
+117 verbose already installed skipping rimraf@^2.2.8 /Users/joelcox/Desktop/angular-soa-seed
+118 verbose already installed skipping should@~3.3.1 /Users/joelcox/Desktop/angular-soa-seed
+119 verbose already installed skipping streamqueue@~0.1.1 /Users/joelcox/Desktop/angular-soa-seed
+120 verbose already installed skipping supertest@~0.11.0 /Users/joelcox/Desktop/angular-soa-seed
+121 verbose already installed skipping testem@* /Users/joelcox/Desktop/angular-soa-seed
+122 verbose already installed skipping time-grunt@~0.3.1 /Users/joelcox/Desktop/angular-soa-seed
+123 verbose already installed skipping tiny-lr@^0.1.4 /Users/joelcox/Desktop/angular-soa-seed
+124 verbose already installed skipping util@^0.10.3 /Users/joelcox/Desktop/angular-soa-seed
+125 verbose already installed skipping wiredep@^1.8.5 /Users/joelcox/Desktop/angular-soa-seed
+126 verbose already installed skipping yargs@* /Users/joelcox/Desktop/angular-soa-seed
+127 silly resolved []
+128 info build /Users/joelcox/Desktop/angular-soa-seed
+129 verbose linkStuff [ false, false, false, '/Users/joelcox/Desktop' ]
+130 info linkStuff base@0.0.0
+131 verbose linkBins base@0.0.0
+132 verbose linkMans base@0.0.0
+133 verbose rebuildBundles base@0.0.0
+134 verbose rebuildBundles [ '.bin',
+134 verbose rebuildBundles   'apache-server-configs',
+134 verbose rebuildBundles   'body-parser',
+134 verbose rebuildBundles   'browser-sync',
+134 verbose rebuildBundles   'chai',
+134 verbose rebuildBundles   'composable-middleware',
+134 verbose rebuildBundles   'compression',
+134 verbose rebuildBundles   'connect-livereload',
+134 verbose rebuildBundles   'connect-mongo',
+134 verbose rebuildBundles   'cookie-parser',
+134 verbose rebuildBundles   'cors',
+134 verbose rebuildBundles   'del',
+134 verbose rebuildBundles   'ejs',
+134 verbose rebuildBundles   'errorhandler',
+134 verbose rebuildBundles   'event-stream',
+134 verbose rebuildBundles   'express',
+134 verbose rebuildBundles   'express-jwt',
+134 verbose rebuildBundles   'express-session',
+134 verbose rebuildBundles   'grunt',
+134 verbose rebuildBundles   'gulp',
+134 verbose rebuildBundles   'gulp-angular-filesort',
+134 verbose rebuildBundles   'gulp-angular-templatecache',
+134 verbose rebuildBundles   'gulp-autoprefixer',
+134 verbose rebuildBundles   'gulp-bower',
+134 verbose rebuildBundles   'gulp-bower-files',
+134 verbose rebuildBundles   'gulp-cache',
+134 verbose rebuildBundles   'gulp-cached',
+134 verbose rebuildBundles   'gulp-changed',
+134 verbose rebuildBundles   'gulp-clean',
+134 verbose rebuildBundles   'gulp-coffee',
+134 verbose rebuildBundles   'gulp-coffeelint',
+134 verbose rebuildBundles   'gulp-concat',
+134 verbose rebuildBundles   'gulp-csslint',
+134 verbose rebuildBundles   'gulp-csso',
+134 verbose rebuildBundles   'gulp-embedlr',
+134 verbose rebuildBundles   'gulp-express',
+134 verbose rebuildBundles   'gulp-filesize',
+134 verbose rebuildBundles   'gulp-flatten',
+134 verbose rebuildBundles   'gulp-git',
+134 verbose rebuildBundles   'gulp-header',
+134 verbose rebuildBundles   'gulp-htmlmin',
+134 verbose rebuildBundles   'gulp-if',
+134 verbose rebuildBundles   'gulp-imagemin',
+134 verbose rebuildBundles   'gulp-inject',
+134 verbose rebuildBundles   'gulp-jade',
+134 verbose rebuildBundles   'gulp-jshint',
+134 verbose rebuildBundles   'gulp-karma',
+134 verbose rebuildBundles   'gulp-less',
+134 verbose rebuildBundles   'gulp-less-sourcemap',
+134 verbose rebuildBundles   'gulp-livereload',
+134 verbose rebuildBundles   'gulp-load-plugins',
+134 verbose rebuildBundles   'gulp-minify-css',
+134 verbose rebuildBundles   'gulp-ng-annotate',
+134 verbose rebuildBundles   'gulp-ng-html2js',
+134 verbose rebuildBundles   'gulp-ngmin',
+134 verbose rebuildBundles   'gulp-nodemon',
+134 verbose rebuildBundles   'gulp-recess',
+134 verbose rebuildBundles   'gulp-remember',
+134 verbose rebuildBundles   'gulp-rename',
+134 verbose rebuildBundles   'gulp-rimraf',
+134 verbose rebuildBundles   'gulp-ruby-sass',
+134 verbose rebuildBundles   'gulp-run-sequence',
+134 verbose rebuildBundles   'gulp-sass',
+134 verbose rebuildBundles   'gulp-serve',
+134 verbose rebuildBundles   'gulp-shell',
+134 verbose rebuildBundles   'gulp-size',
+134 verbose rebuildBundles   'gulp-sourcemaps',
+134 verbose rebuildBundles   'gulp-uglify',
+134 verbose rebuildBundles   'gulp-uncss',
+134 verbose rebuildBundles   'gulp-useref',
+134 verbose rebuildBundles   'gulp-util',
+134 verbose rebuildBundles   'gulp-watch',
+134 verbose rebuildBundles   'http',
+134 verbose rebuildBundles   'jasmine-given',
+134 verbose rebuildBundles   'jit-grunt',
+134 verbose rebuildBundles   'jshint-stylish',
+134 verbose rebuildBundles   'jsonwebtoken',
+134 verbose rebuildBundles   'karma',
+134 verbose rebuildBundles   'karma-chai',
+134 verbose rebuildBundles   'karma-chrome-launcher',
+134 verbose rebuildBundles   'karma-coffee-preprocessor',
+134 verbose rebuildBundles   'karma-firefox-launcher',
+134 verbose rebuildBundles   'karma-html2js-preprocessor',
+134 verbose rebuildBundles   'karma-jade-preprocessor',
+134 verbose rebuildBundles   'karma-jasmine',
+134 verbose rebuildBundles   'karma-mocha',
+134 verbose rebuildBundles   'karma-ng-html2js-preprocessor',
+134 verbose rebuildBundles   'karma-ng-jade2js-preprocessor',
+134 verbose rebuildBundles   'karma-ng-scenario',
+134 verbose rebuildBundles   'karma-phantomjs-launcher',
+134 verbose rebuildBundles   'karma-requirejs',
+134 verbose rebuildBundles   'karma-script-launcher',
+134 verbose rebuildBundles   'lazypipe',
+134 verbose rebuildBundles   'lodash',
+134 verbose rebuildBundles   'main-bower-files',
+134 verbose rebuildBundles   'method-override',
+134 verbose rebuildBundles   'mocha',
+134 verbose rebuildBundles   'mongoose',
+134 verbose rebuildBundles   'morgan',
+134 verbose rebuildBundles   'nodemon',
+134 verbose rebuildBundles   'open',
+134 verbose rebuildBundles   'passport',
+134 verbose rebuildBundles   'passport-facebook',
+134 verbose rebuildBundles   'passport-google-oauth',
+134 verbose rebuildBundles   'passport-local',
+134 verbose rebuildBundles   'passport-twitter',
+134 verbose rebuildBundles   'protractor',
+134 verbose rebuildBundles   'requirejs',
+134 verbose rebuildBundles   'rimraf',
+134 verbose rebuildBundles   'serve-favicon',
+134 verbose rebuildBundles   'should',
+134 verbose rebuildBundles   'socket.io',
+134 verbose rebuildBundles   'socket.io-client',
+134 verbose rebuildBundles   'socketio-jwt',
+134 verbose rebuildBundles   'streamqueue',
+134 verbose rebuildBundles   'supertest',
+134 verbose rebuildBundles   'testem',
+134 verbose rebuildBundles   'time-grunt',
+134 verbose rebuildBundles   'tiny-lr',
+134 verbose rebuildBundles   'util',
+134 verbose rebuildBundles   'wiredep',
+134 verbose rebuildBundles   'yargs' ]
+135 verbose rebuild bundle /Users/joelcox/Desktop/angular-soa-seed/node_modules/chai
+136 info build /Users/joelcox/Desktop/angular-soa-seed/node_modules/chai
+137 info preinstall chai@1.9.1
+138 verbose linkStuff [ false,
+138 verbose linkStuff   false,
+138 verbose linkStuff   false,
+138 verbose linkStuff   '/Users/joelcox/Desktop/angular-soa-seed/node_modules' ]
+139 info linkStuff chai@1.9.1
+140 verbose linkBins chai@1.9.1
+141 verbose linkMans chai@1.9.1
+142 verbose rebuildBundles chai@1.9.1
+143 verbose rebuildBundles [ 'assertion-error', 'deep-eql' ]
+144 info install chai@1.9.1
+145 info postinstall chai@1.9.1
+146 verbose rebuild bundle /Users/joelcox/Desktop/angular-soa-seed/node_modules/grunt
+147 info build /Users/joelcox/Desktop/angular-soa-seed/node_modules/grunt
+148 info preinstall grunt@0.4.5
+149 verbose linkStuff [ false,
+149 verbose linkStuff   false,
+149 verbose linkStuff   false,
+149 verbose linkStuff   '/Users/joelcox/Desktop/angular-soa-seed/node_modules' ]
+150 info linkStuff grunt@0.4.5
+151 verbose linkBins grunt@0.4.5
+152 verbose linkMans grunt@0.4.5
+153 verbose rebuildBundles grunt@0.4.5
+154 verbose rebuildBundles [ '.bin',
+154 verbose rebuildBundles   'async',
+154 verbose rebuildBundles   'coffee-script',
+154 verbose rebuildBundles   'colors',
+154 verbose rebuildBundles   'dateformat',
+154 verbose rebuildBundles   'eventemitter2',
+154 verbose rebuildBundles   'exit',
+154 verbose rebuildBundles   'findup-sync',
+154 verbose rebuildBundles   'getobject',
+154 verbose rebuildBundles   'glob',
+154 verbose rebuildBundles   'grunt-legacy-log',
+154 verbose rebuildBundles   'grunt-legacy-util',
+154 verbose rebuildBundles   'hooker',
+154 verbose rebuildBundles   'iconv-lite',
+154 verbose rebuildBundles   'js-yaml',
+154 verbose rebuildBundles   'lodash',
+154 verbose rebuildBundles   'minimatch',
+154 verbose rebuildBundles   'nopt',
+154 verbose rebuildBundles   'underscore.string',
+154 verbose rebuildBundles   'which' ]
+155 info install grunt@0.4.5
+156 info postinstall grunt@0.4.5
+157 verbose rebuild bundle /Users/joelcox/Desktop/angular-soa-seed/node_modules/mocha
+158 info build /Users/joelcox/Desktop/angular-soa-seed/node_modules/mocha
+159 info preinstall mocha@1.21.4
+160 verbose linkStuff [ false,
+160 verbose linkStuff   false,
+160 verbose linkStuff   false,
+160 verbose linkStuff   '/Users/joelcox/Desktop/angular-soa-seed/node_modules' ]
+161 info linkStuff mocha@1.21.4
+162 verbose linkBins mocha@1.21.4
+163 verbose link bins [ { mocha: './bin/mocha', _mocha: './bin/_mocha' },
+163 verbose link bins   '/Users/joelcox/Desktop/angular-soa-seed/node_modules/.bin',
+163 verbose link bins   false ]
+164 verbose linkMans mocha@1.21.4
+165 verbose rebuildBundles mocha@1.21.4
+166 verbose rebuildBundles [ '.bin',
+166 verbose rebuildBundles   'commander',
+166 verbose rebuildBundles   'debug',
+166 verbose rebuildBundles   'diff',
+166 verbose rebuildBundles   'glob',
+166 verbose rebuildBundles   'growl',
+166 verbose rebuildBundles   'jade',
+166 verbose rebuildBundles   'mkdirp' ]
+167 error Error: EACCES, unlink '/Users/joelcox/Desktop/angular-soa-seed/node_modules/.bin/mocha'
+167 error  { [Error: EACCES, unlink '/Users/joelcox/Desktop/angular-soa-seed/node_modules/.bin/mocha']
+167 error   errno: 3,
+167 error   code: 'EACCES',
+167 error   path: '/Users/joelcox/Desktop/angular-soa-seed/node_modules/.bin/mocha' }
+168 error Please try running this command again as root/Administrator.
+169 error System Darwin 14.0.0
+170 error command "node" "/usr/local/bin/npm" "install"
+171 error cwd /Users/joelcox/Desktop/angular-soa-seed
+172 error node -v v0.10.31
+173 error npm -v 1.4.23
+174 error path /Users/joelcox/Desktop/angular-soa-seed/node_modules/.bin/mocha
+175 error code EACCES
+176 error errno 3
+177 error stack Error: EACCES, unlink '/Users/joelcox/Desktop/angular-soa-seed/node_modules/.bin/mocha'
+178 verbose exit [ 3, true ]

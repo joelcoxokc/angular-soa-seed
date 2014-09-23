@@ -139,20 +139,20 @@ gulp.task('inject:bower', function () {
 });
 
 gulp.task('remove:inject', function(){
-  var styles = gulp.src( './build/injector/styles.html' );
-  var scripts = gulp.src( './build/injector/scripts.html' );
+  var head = gulp.src( './build/injector/head.html' );
+  var body = gulp.src( './build/injector/body.html' );
   return gulp.src( client.index )
-    .pipe( g.inject(styles,{
-      starttag: '<!-- STYLES -->',
-      endtag: '<!-- END:STYLES -->',
+    .pipe( g.inject(head,{
+      starttag: '<!-- HEAD -->',
+      endtag: '<!-- END:HEAD -->',
       transform: function (filePath, file) {
         // return file contents as string
         return file.contents.toString('utf8')
       }
     }))
-    .pipe( g.inject(scripts,{
-      starttag: '<!-- SCRIPTS -->',
-      endtag: '<!-- END:SCRIPTS -->',
+    .pipe( g.inject(body,{
+      starttag: '<!-- BODY -->',
+      endtag: '<!-- END:BODY -->',
       transform: function (filePath, file) {
         // return file contents as string
         return file.contents.toString('utf8')
