@@ -2,10 +2,10 @@
 'use strict';
 
 angular.module('baseApp')
-  .factory('socket', function(socketFactory) {
+  .factory('socket', function(socketFactory, serverUrl) {
 
     // socket.io now auto-configures its connection when we ommit a connection url
-    var ioSocket = io('', {
+    var ioSocket = io('http://localhost:9000', {
       // Send auth token on connection, you will need to DI the Auth service above
       // 'query': 'token=' + Auth.getToken()
       path: '/socket.io-client'

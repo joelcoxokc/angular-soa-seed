@@ -55,9 +55,6 @@ gulp.task('default', ['clean', 'remove:inject'], function (cb) {
 
 
 
-
-
-
 /*
  |  SERVER
  */
@@ -75,12 +72,15 @@ gulp.task('serve',['styles', 'inject:client'], function () {
   gulp.watch(client.images, reload);
 });
 // Build and serve the output from the dist build
-gulp.task('serve:dist', ['default'], function () {
+gulp.task('serve:dist', ['default', 'run:servers'], function () {
   browserSync({
     notify: false,
     // https: true,
     server: 'dist'
   });
+  runServers.base();
+});
+gulp.task('run:servers', function(){
   runServers.base();
 });
 
